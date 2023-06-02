@@ -15,10 +15,10 @@ struct ContentView: View {
         
         NavigationView {
             List {
-                ForEach(apController.apexPredators) { apexPredator in
+                ForEach(apController.apexPredators) { predator in
                     
                     NavigationLink(destination: Text("Dino Details go Here")) {
-                        Text(apexPredator.name)
+                        PredatorRow(predator: predator)
                     }
                 }
             }
