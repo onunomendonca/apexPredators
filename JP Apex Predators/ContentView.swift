@@ -13,6 +13,15 @@ struct ContentView: View {
     @State var sortAlphabetic = false
     @State var currentFilter: TypeFilters = .all
     @State var currentMovieFilter: String = "All"
+    @State var searchText = ""
+    
+    var searchResults: [ApexPredator] {
+            if searchText.isEmpty {
+                return apController.apexPredators
+            } else {
+                return apController.apexPredators.filter { $0.name.contains(searchText) }
+            }
+        }
     
     var body: some View {
         
@@ -30,13 +39,14 @@ struct ContentView: View {
         
         return NavigationView {
             List {
-                ForEach(apController.apexPredators) { predator in
+                ForEach(searchResults) { predator in
                     
                     NavigationLink(destination: PredatorDetail(predator: predator)) {
                         PredatorRow(predator: predator)
                     }
                 }
             }
+            .searchable(text: $searchText)
             .navigationTitle("Apex Predators")
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
