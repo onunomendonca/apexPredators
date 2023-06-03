@@ -12,10 +12,13 @@ struct ContentView: View {
     let apController = PredatorController()
     @State var sortAlphabetic = false
     @State var currentFilter: TypeFilters = .all
+    @State var currentMovieFilter: String = "All"
     
     var body: some View {
         
         apController.filterBy(type: currentFilter)
+        apController.filterByMovie(movie: currentMovieFilter)
+        
         
         if sortAlphabetic {
             
@@ -65,6 +68,20 @@ struct ContentView: View {
                         }
                     } label: {
                         Image(systemName: "slider.horizontal.3")
+                    }
+                }
+                
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Menu {
+                        Picker("Filter By Movie", selection: $currentMovieFilter.animation()) {
+                            
+                            ForEach(apController.allMovies, id: \.self) { movie in
+                                Text(movie)
+                            }
+                            
+                        }
+                    } label: {
+                        Image(systemName: "popcorn.circle")
                     }
                 }
             }

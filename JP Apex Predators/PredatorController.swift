@@ -17,12 +17,15 @@ enum TypeFilters: String, CaseIterable {
 
 class PredatorController {
     
-    var apexPredators: [ApexPredator] = []
+    private var apexPredatorsFilteredByType: [ApexPredator] = []
     private var allApexPredators: [ApexPredator] = []
+    var apexPredators: [ApexPredator] = []
+    var allMovies: [String] = []
     
     init() {
         
         decodeApexPredatorData()
+        allMovies = getAllMovies()
     }
     
     func decodeApexPredatorData() {
@@ -34,7 +37,7 @@ class PredatorController {
                 let decoder = JSONDecoder()
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
                 allApexPredators = try decoder.decode([ApexPredator].self, from: data)
-                apexPredators = allApexPredators
+                apexPredatorsFilteredByType = allApexPredators
 
             } catch {
                 print("Error decoding JSON data \(error)")
@@ -62,13 +65,24 @@ class PredatorController {
         switch type {
 
         case .all:
-            apexPredators = allApexPredators
+            apexPredatorsFilteredByType = allApexPredators
         case .land:
-            apexPredators = allApexPredators.filter({ $0.type == TypeFilters.land.rawValue})
+            apexPredatorsFilteredByType = allApexPredators.filter({ $0.type == TypeFilters.land.rawValue})
         case .air:
-            apexPredators = allApexPredators.filter({ $0.type == TypeFilters.air.rawValue})
+            apexPredatorsFilteredByType = allApexPredators.filter({ $0.type == TypeFilters.air.rawValue})
         case .sea:
-            apexPredators = allApexPredators.filter({ $0.type == TypeFilters.sea.rawValue})
+            apexPredatorsFilteredByType = allApexPredators.filter({ $0.type == TypeFilters.sea.rawValue})
+        }
+    }
+    
+    func filterByMovie(movie: String) {
+        
+        if movie == "All" {
+
+            apexPredators = apexPredatorsFilteredByType
+        } else {
+
+            apexPredators = apexPredatorsFilteredByType.filter( { $0.movies.contains(movie) })
         }
     }
     
@@ -80,5 +94,20 @@ class PredatorController {
     func sortByMovieAppearance() {
         
         apexPredators.sort(by: {$0.id < $1.id})
+    }
+    
+    private func getAllMovies() -> [String] {
+        
+        var movies: [String] = ["All"]
+        
+        allApexPredators.forEach { predator in
+            predator.movies.forEach { movie in
+                if !movies.contains(movie) {
+                    movies.append(movie)
+                }
+            }
+        }
+        
+        return movies
     }
 }

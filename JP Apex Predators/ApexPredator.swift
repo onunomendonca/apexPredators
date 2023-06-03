@@ -8,7 +8,11 @@
 import Foundation
 import SwiftUI
 
-struct ApexPredator: Codable, Identifiable {
+struct ApexPredator: Codable, Identifiable, Hashable {
+    
+    static func == (lhs: ApexPredator, rhs: ApexPredator) -> Bool {
+        lhs.id == rhs.id
+    }
     
     let id: Int
     let name: String
@@ -29,7 +33,11 @@ struct ApexPredator: Codable, Identifiable {
     }
 }
 
-struct MovieScene: Codable, Identifiable {
+struct MovieScene: Codable, Identifiable, Hashable {
+    
+    static func == (lhs: MovieScene, rhs: MovieScene) -> Bool {
+        lhs.id == rhs.id
+    }
     
     let id: Int
     let movie: String

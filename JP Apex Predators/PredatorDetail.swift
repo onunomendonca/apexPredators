@@ -19,12 +19,17 @@ struct PredatorDetail: View {
                     .resizable()
                     .scaledToFit()
                 
-                Image(predator.name.lowercased().filter{ $0 != " " })
+                let predatorImage = Image(predator.name.lowercased().filter{ $0 != " " })
                     .resizable()
                     .scaledToFit()
-                    .frame(width: UIScreen.main.bounds.width/1.5, height: UIScreen.main.bounds.height/4)
-                    .shadow(color: .black, radius: 6)
                     .rotation3DEffect(.degrees(180), axis: (x: 0, y: 1, z: 0))
+                
+                NavigationLink(destination: predatorImage) {
+                    predatorImage
+                        .frame(width: UIScreen.main.bounds.width/1.5, height: UIScreen.main.bounds.height/4)
+                        .shadow(color: .black, radius: 6)
+                }
+                
             }
             VStack(alignment: .leading) {
                 
