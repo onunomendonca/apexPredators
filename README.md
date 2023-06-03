@@ -13,5 +13,7 @@ All of the code challenges of the course are done on this repo.
 
 | Main Screen        | Sort by Type           | Sort by Movie           | Detail Page          |
 | ------------- | ------------- | ------------- | ------------- |
-|![Simulator Screenshot - iPhone 14 Pro - 2023-06-03 at 13 39 02](https://github.com/onunomendonca/apexPredators/assets/5332606/230a5865-3bd5-46f9-a236-cff30302ce32)  | ![Simulator Screenshot - iPhone 14 Pro - 2023-06-03 at 14 11 45](https://github.com/onunomendonca/apexPredators/assets/5332606/479cace9-2e8e-48c2-9dda-c582edf1d4ea) | ![Simulator Screenshot - iPhone 14 Pro - 2023-06-03 at 13 39 04](https://github.com/onunomendonca/apexPredators/assets/5332606/dc0384ed-7cff-49b2-9d07-746049cede65) | ![Simulator Screenshot - iPhone 14 Pro - 2023-06-02 at 22 52 35](https://github.com/onunomendonca/apexPredators/assets/5332606/d2ae30b5-687b-4737-8783-cc1aafaef1ef) |
+| ![Simulator Screenshot - iPhone 14 Pro - 2023-06-03 at 14 22 21](https://github.com/onunomendonca/apexPredators/assets/5332606/33565435-c164-4ff8-8cac-e9dfcecd208e)  | ![Simulator Screenshot - iPhone 14 Pro - 2023-06-03 at 14 11 45](https://github.com/onunomendonca/apexPredators/assets/5332606/479cace9-2e8e-48c2-9dda-c582edf1d4ea) | ![Simulator Screenshot - iPhone 14 Pro - 2023-06-03 at 14 23 07](https://github.com/onunomendonca/apexPredators/assets/5332606/1b916904-f6d9-4654-94c2-618ab28f9bec) | ![Simulator Screenshot - iPhone 14 Pro - 2023-06-02 at 22 52 35](https://github.com/onunomendonca/apexPredators/assets/5332606/d2ae30b5-687b-4737-8783-cc1aafaef1ef) |
+
+
 
