@@ -3,7 +3,7 @@
 This app is a comprehensive guide to dinosaurs, featuring information about their types, stories, and their appearances in Jurassic Park films. Users can search for specific dinosaurs, filter them based on their types and movies they appeared in, and sort them by name or movies. 
 It provides a rich and interactive experience for dinosaur enthusiasts, offering a convenient way to explore and learn about these fascinating creatures.
 
-This project is part of a course i'm enroll in @ [IOS 15 App Development with SwiftUI 3 and Swift 5 Udemy Course](https://farfetch.udemy.com/course/ios-15-app-development-with-swiftui-3-and-swift-5/). 
+This project is part of a course in which I am enrolled in @ [IOS 15 App Development with SwiftUI 3 and Swift 5 Udemy Course](https://farfetch.udemy.com/course/ios-15-app-development-with-swiftui-3-and-swift-5/). 
 
 All of the code challenges of the course are done on this repo.
 
